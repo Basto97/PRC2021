@@ -1,0 +1,11 @@
+extends Layout
+block content
+    table.table
+        thead
+            tr
+                th Elements
+        tbody
+            each e in period
+                tr
+                    td
+                        a(href='/elems/' + e.Symbol)=e.Symbol

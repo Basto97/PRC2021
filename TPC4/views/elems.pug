@@ -1,0 +1,8 @@
+extends layout
+block content
+    h1 Periodic Table of Elements
+        div(role='region' tabindex='0')
+            ol#periodic-table
+                each e in elements
+                    li(title='' + e.name)
+                        a(href='/elems/' + e.symbol)= e.symbol

@@ -1,0 +1,25 @@
+extends Layout
+block content
+    table.table
+        thead
+            tr
+                th Symbol
+                th Name
+                th Atomic Number
+                th Atomic Weight
+                th Group
+                th Period
+                th Color
+                th Classification
+        tbody
+            tr
+                td= element.Symbol
+                td= element.Name
+                td= element["Atomic Number"]
+                td= element["Atomic Weight"]
+                td
+                    a(href="/periodictable/group/" + element.Group)= element.Group
+                td
+                    a(href="/periodictable/period/" + element.Period)=element.Period
+                td= element.Color
+                td= element.Classification

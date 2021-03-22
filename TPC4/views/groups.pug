@@ -1,0 +1,13 @@
+extends layout
+block content
+    table.table
+        thead
+            tr
+                th #
+                th Name
+        tbody
+            each g in groups
+                tr
+                    td= g.Number
+                    td
+                        a(href='/groups/' + g.Number)=g.Name

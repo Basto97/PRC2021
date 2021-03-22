@@ -1,0 +1,11 @@
+extends layout
+block content
+    table.table
+        thead
+            tr
+                th #
+        tbody
+            each p in periods
+                tr
+                    td
+                        a(href='/periods/' + p.Number)="Period " + p.Number
