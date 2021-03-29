@@ -1,0 +1,146 @@
+@prefix : <http://www.semanticweb.org/celso/ontologies/2021/2/untitled-ontology-6#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/celso/ontologies/2021/2/untitled-ontology-6> .
+
+<http://www.semanticweb.org/celso/ontologies/2021/2/untitled-ontology-6> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/celso/ontologies/2021/2/pubs#autorDe
+<http://www.semanticweb.org/celso/ontologies/2021/2/pubs#autorDe> rdf:type owl:ObjectProperty ;
+                                                                  owl:inverseOf <http://www.semanticweb.org/celso/ontologies/2021/2/pubs#feitoPor> .
+
+
+###  http://www.semanticweb.org/celso/ontologies/2021/2/pubs#feitoPor
+<http://www.semanticweb.org/celso/ontologies/2021/2/pubs#feitoPor> rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/celso/ontologies/2021/2/pubs#temAdress
+<http://www.semanticweb.org/celso/ontologies/2021/2/pubs#temAdress> rdf:type owl:DatatypeProperty .
+
+
+###  http://www.semanticweb.org/celso/ontologies/2021/2/pubs#temAno
+<http://www.semanticweb.org/celso/ontologies/2021/2/pubs#temAno> rdf:type owl:DatatypeProperty .
+
+
+###  http://www.semanticweb.org/celso/ontologies/2021/2/pubs#temBookTitle
+<http://www.semanticweb.org/celso/ontologies/2021/2/pubs#temBookTitle> rdf:type owl:DatatypeProperty .
+
+
+###  http://www.semanticweb.org/celso/ontologies/2021/2/pubs#temDOI
+<http://www.semanticweb.org/celso/ontologies/2021/2/pubs#temDOI> rdf:type owl:DatatypeProperty .
+
+
+###  http://www.semanticweb.org/celso/ontologies/2021/2/pubs#temMes
+<http://www.semanticweb.org/celso/ontologies/2021/2/pubs#temMes> rdf:type owl:DatatypeProperty .
+
+
+###  http://www.semanticweb.org/celso/ontologies/2021/2/pubs#temNome
+<http://www.semanticweb.org/celso/ontologies/2021/2/pubs#temNome> rdf:type owl:DatatypeProperty .
+
+
+###  http://www.semanticweb.org/celso/ontologies/2021/2/pubs#temTItle
+<http://www.semanticweb.org/celso/ontologies/2021/2/pubs#temTItle> rdf:type owl:DatatypeProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/celso/ontologies/2021/2/pubs#Artigo
+<http://www.semanticweb.org/celso/ontologies/2021/2/pubs#Artigo> rdf:type owl:Class ;
+                                                                 rdfs:subClassOf <http://www.semanticweb.org/celso/ontologies/2021/2/pubs#Publicacao> .
+
+
+###  http://www.semanticweb.org/celso/ontologies/2021/2/pubs#Autor
+<http://www.semanticweb.org/celso/ontologies/2021/2/pubs#Autor> rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/celso/ontologies/2021/2/pubs#Inbook
+<http://www.semanticweb.org/celso/ontologies/2021/2/pubs#Inbook> rdf:type owl:Class ;
+                                                                 rdfs:subClassOf <http://www.semanticweb.org/celso/ontologies/2021/2/pubs#Publicacao> .
+
+
+###  http://www.semanticweb.org/celso/ontologies/2021/2/pubs#Inproceedings
+<http://www.semanticweb.org/celso/ontologies/2021/2/pubs#Inproceedings> rdf:type owl:Class ;
+                                                                        rdfs:subClassOf <http://www.semanticweb.org/celso/ontologies/2021/2/pubs#Publicacao> .
+
+
+###  http://www.semanticweb.org/celso/ontologies/2021/2/pubs#Livro
+<http://www.semanticweb.org/celso/ontologies/2021/2/pubs#Livro> rdf:type owl:Class ;
+                                                                rdfs:subClassOf <http://www.semanticweb.org/celso/ontologies/2021/2/pubs#Publicacao> .
+
+
+###  http://www.semanticweb.org/celso/ontologies/2021/2/pubs#Misc
+<http://www.semanticweb.org/celso/ontologies/2021/2/pubs#Misc> rdf:type owl:Class ;
+                                                               rdfs:subClassOf <http://www.semanticweb.org/celso/ontologies/2021/2/pubs#Publicacao> .
+
+
+###  http://www.semanticweb.org/celso/ontologies/2021/2/pubs#Proceedings
+<http://www.semanticweb.org/celso/ontologies/2021/2/pubs#Proceedings> rdf:type owl:Class ;
+                                                                      rdfs:subClassOf <http://www.semanticweb.org/celso/ontologies/2021/2/pubs#Publicacao> .
+
+
+###  http://www.semanticweb.org/celso/ontologies/2021/2/pubs#Publicacao
+<http://www.semanticweb.org/celso/ontologies/2021/2/pubs#Publicacao> rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/celso/ontologies/2021/2/pubs#ap
+<http://www.semanticweb.org/celso/ontologies/2021/2/pubs#ap> rdf:type owl:NamedIndividual ,
+                                                                      <http://www.semanticweb.org/celso/ontologies/2021/2/pubs#Autor> ;
+                                                             <http://www.semanticweb.org/celso/ontologies/2021/2/pubs#autorDe> <http://www.semanticweb.org/celso/ontologies/2021/2/pubs#cisti2017> ;
+                                                             <http://www.semanticweb.org/celso/ontologies/2021/2/pubs#temNome> "André Pereira" .
+
+
+###  http://www.semanticweb.org/celso/ontologies/2021/2/pubs#cisti2017
+<http://www.semanticweb.org/celso/ontologies/2021/2/pubs#cisti2017> rdf:type owl:NamedIndividual ,
+                                                                             <http://www.semanticweb.org/celso/ontologies/2021/2/pubs#Inproceedings> ,
+                                                                             <http://www.semanticweb.org/celso/ontologies/2021/2/pubs#Publicacao> ;
+                                                                    <http://www.semanticweb.org/celso/ontologies/2021/2/pubs#feitoPor> <http://www.semanticweb.org/celso/ontologies/2021/2/pubs#ap> ,
+                                                                                                                                       <http://www.semanticweb.org/celso/ontologies/2021/2/pubs#jcr> ,
+                                                                                                                                       <http://www.semanticweb.org/celso/ontologies/2021/2/pubs#lf> ,
+                                                                                                                                       <http://www.semanticweb.org/celso/ontologies/2021/2/pubs#mf> ;
+                                                                    <http://www.semanticweb.org/celso/ontologies/2021/2/pubs#temAdress> "ISCTE, Lisboa, Portugal" ;
+                                                                    <http://www.semanticweb.org/celso/ontologies/2021/2/pubs#temAno> 2017 ;
+                                                                    <http://www.semanticweb.org/celso/ontologies/2021/2/pubs#temBookTitle> "12th Iberian Conference on Information Systems and Technologies (CISTI)," ;
+                                                                    <http://www.semanticweb.org/celso/ontologies/2021/2/pubs#temDOI> "http://hdl.handle.net/1822/46093" ;
+                                                                    <http://www.semanticweb.org/celso/ontologies/2021/2/pubs#temMes> 06.24 ;
+                                                                    <http://www.semanticweb.org/celso/ontologies/2021/2/pubs#temTItle> "RODA-in: A generic tool for the mass creation of Submission Information Packages" .
+
+
+###  http://www.semanticweb.org/celso/ontologies/2021/2/pubs#jcr
+<http://www.semanticweb.org/celso/ontologies/2021/2/pubs#jcr> rdf:type owl:NamedIndividual ,
+                                                                       <http://www.semanticweb.org/celso/ontologies/2021/2/pubs#Autor> ;
+                                                              <http://www.semanticweb.org/celso/ontologies/2021/2/pubs#autorDe> <http://www.semanticweb.org/celso/ontologies/2021/2/pubs#cisti2017> ;
+                                                              <http://www.semanticweb.org/celso/ontologies/2021/2/pubs#temNome> "JCR" .
+
+
+###  http://www.semanticweb.org/celso/ontologies/2021/2/pubs#lf
+<http://www.semanticweb.org/celso/ontologies/2021/2/pubs#lf> rdf:type owl:NamedIndividual ,
+                                                                      <http://www.semanticweb.org/celso/ontologies/2021/2/pubs#Autor> ;
+                                                             <http://www.semanticweb.org/celso/ontologies/2021/2/pubs#autorDe> <http://www.semanticweb.org/celso/ontologies/2021/2/pubs#cisti2017> ;
+                                                             <http://www.semanticweb.org/celso/ontologies/2021/2/pubs#temNome> "LovoFino" .
+
+
+###  http://www.semanticweb.org/celso/ontologies/2021/2/pubs#mf
+<http://www.semanticweb.org/celso/ontologies/2021/2/pubs#mf> rdf:type owl:NamedIndividual ,
+                                                                      <http://www.semanticweb.org/celso/ontologies/2021/2/pubs#Autor> ;
+                                                             <http://www.semanticweb.org/celso/ontologies/2021/2/pubs#autorDe> <http://www.semanticweb.org/celso/ontologies/2021/2/pubs#cisti2017> ;
+                                                             <http://www.semanticweb.org/celso/ontologies/2021/2/pubs#temNome> "Miguel Ferreira" .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
