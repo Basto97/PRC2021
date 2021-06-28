@@ -1,0 +1,2 @@
+cp ontologia-nao-povoada.ttl ontologia-povoada.ttl
+node json2ttl.js >> ontologia-povoada.ttl

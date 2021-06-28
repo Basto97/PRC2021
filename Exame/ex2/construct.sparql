@@ -1,0 +1,58 @@
+# PREFIXES
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX : <http://prc.di.uminho.pt/2021/myfamily#>
+
+
+# 1 Constrói os triplos da relação Tio;
+CONSTRUCT {
+    ?tio :eTio ?p
+} WHERE {
+    ?tio :temProgenitor ?pai .
+    ?pai :eProgenitorDe ?irmao .
+    ?irmao :eProgenitorDe ?p
+    FILTER (?tio != ?irmao)
+}
+
+# 2 Constrói os triplos da relação Trisavô;
+CONSTRUCT {
+    ?filho :eTrisavo ?trisavo
+} WHERE {
+    ?filho :temProgenitor ?pais .
+    ?pais :temProgenitor ?avos .
+    ?avos :temProgenitor ?bisavos .
+    ?bisavos :temMae ?trisavo
+}
+
+# 3 Constrói os triplos da relação Ascendentes;
+CONSTRUCT {
+    ?ascendente :eAscendente ?pessoa
+} WHERE {
+    ?pessoa :temProgenitor+ ?descendente
+}
+
+# 4 onstrói os triplos da relação Meio-irmão;
+CONSTRUCT {
+    ?irmao1 :ePrimo ?irmao2
+} WHERE {
+    ?irmao1 :temProgenitor ?pai1 .
+    ?irmao2 :temProgenitor ?pai1 .
+    ?irmao2 :temProgenitor ?pai3 .
+}
+
+# 5 Acrescenta o atributo sexo à tua ontologia, há várias formas de o fazer, escolhe a que entenderes. Constrói os triplos relacionados com esta propriedade usando as propriedades existentes: temPai e temMae;
+CONSTRUCT {
+    ?mae :sexo "F" .
+    ?pai :sexo "M" .
+} WHERE {
+    ?pessoa1 :temMae ?mae .
+    ?pessoa2 :temPai ?pai .
+}
+
+
+CONSTRUCT {
+    :José_Carlos_Leite_Ramalho_1967 :temRelacaoCom ?individuoX .
+} WHERE {
+    ?individuoX (:temProgenitor|:eProgenitorDe)+ :José_Carlos_Leite_Ramalho_1967 .
+}

@@ -1,0 +1,48 @@
+# PREFIXOS
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX : <http://www.semanticweb.org/basto/ontologies/2021/5/cinema#>
+
+
+# 1 Quantos filmes estão registados?
+SELECT (count(?e) as ?n) WHERE { 
+   ?e rdf:type :Filme
+} 
+
+# 2 Quantos filmes foram realizados em 1994?
+SELECT (count(?e) as ?n) WHERE { 
+   ?e rdf:type :Filme ;
+      :year "1994"
+} 
+
+# 3 Quantos filmes tiveram a participação de Dan Aykroyd?
+SELECT ?t WHERE {
+   ?e rdf:type :Filme ;
+      :temAtor ?a ;
+      :title ?t .
+   ?a :title ?"Dan Aykroyd"
+}
+
+# 4 Qual a distribuição dos filmes por ano?
+SELECT ?y (count(?e) as ?n) WHERE {
+   ?e rdf:type :Filme ;
+      :year ?y .
+} GROUP BY ?y
+
+# 5 Qual a distribuição de filmes por género?
+SELECT ?tg (count(?e) as ?n) WHERE {
+   ?e rdf:type :Filme ;
+      :temGenero ?g .
+   ?g :title ?tg
+} GROUP BY ?tg
+
+# 6 Quais os títulos dos filmes, em ordem alfabética, que têm a participação de Keanu Reeves?
+SELECT ?t WHERE {
+   ?e rdf:type :Filme ;
+      :title ?t ;
+      :temAtor ?a .
+   ?a rdf:type :Ator ;
+      :title " Keanu Reeves"
+} 
+
